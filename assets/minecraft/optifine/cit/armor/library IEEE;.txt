@@ -1,0 +1,25 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+entity Multiplexeur_6_to_1 is
+Port (
+A : in STD_LOGIC_VECTOR (3 downto 0);
+B : in STD_LOGIC_VECTOR (3 downto 0);
+C : in STD_LOGIC_VECTOR (3 downto 0);
+D : in STD_LOGIC_VECTOR (3 downto 0);
+E : in STD_LOGIC_VECTOR (3 downto 0);
+F : in STD_LOGIC_VECTOR (3 downto 0);
+Sortie_Mux : out STD_LOGIC_VECTOR (3 downto 0);
+sel : in STD_LOGIC_VECTOR (2 downto 0)
+);
+end Multiplexeur_6_to_1;
+architecture Behavioral of Multiplexeur_6_to_1 is
+begin
+process(sel,A,B,C,D,E,F)
+begin
+case sel is
+-- code à compléter
+end case;
+end process;
+end Behavioral;
