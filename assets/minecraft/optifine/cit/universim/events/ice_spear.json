@@ -208,12 +208,13 @@
 			"rotation": [0, 0, 90]
 		},
 		"gui": {
-			"rotation": [0, 0, 45],
+			"rotation": [0, 0, -45],
+			"translation": [-1.25, -1.25, 0],
 			"scale": [0.5, 0.5, 0.5]
 		},
 		"fixed": {
 			"translation": [0, -2.25, 0],
-			"scale": [0.5, 0.5, 0.5]
+			"scale": [2, 2, 2]
 		}
 	},
 	"groups": [

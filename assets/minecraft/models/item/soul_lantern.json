@@ -1,0 +1,79 @@
+{
+	"credit": "Made with Blockbench by RyanCR, adjusted by Ergenor",
+	"parent": "item/flat",
+	"textures": {
+		"0": "item/soul_lantern",
+		"1": "item/lantern_top",
+		"particle": "item/soul_lantern"
+	},
+	"elements": [
+		{
+			"from": [5, 0, 5],
+			"to": [11, 7, 11],
+			"rotation": {"angle": 0, "axis": "y", "origin": [17, 8, 17]},
+			"faces": {
+				"north": {"uv": [5, 7, 11, 14], "texture": "#0"},
+				"east": {"uv": [5, 7, 11, 14], "texture": "#0"},
+				"south": {"uv": [5, 7, 11, 14], "texture": "#0"},
+				"west": {"uv": [5, 7, 11, 14], "texture": "#0"},
+				"up": {"uv": [5, 5, 11, 11], "texture": "#1"},
+				"down": {"uv": [5, 5, 11, 11], "texture": "#1"}
+			}
+		},
+		{
+			"from": [6, 7, 6],
+			"to": [10, 9, 10],
+			"rotation": {"angle": 0, "axis": "y", "origin": [17, 15, 17]},
+			"faces": {
+				"north": {"uv": [6, 5, 10, 7], "texture": "#0"},
+				"east": {"uv": [6, 5, 10, 7], "texture": "#0"},
+				"south": {"uv": [6, 5, 10, 7], "texture": "#0"},
+				"west": {"uv": [6, 5, 10, 7], "texture": "#0"},
+				"up": {"uv": [6, 6, 10, 10], "texture": "#1"},
+				"down": {"uv": [5, 5, 11, 11], "texture": "#1"}
+			}
+		},
+		{
+			"from": [7, 9, 8],
+			"to": [9, 13, 8],
+			"rotation": {"angle": 0, "axis": "y", "origin": [17, 17, 17]},
+			"faces": {
+				"north": {"uv": [7, 1, 9, 5], "texture": "#0"},
+				"south": {"uv": [9, 1, 7, 5], "texture": "#0"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [70, 0, 0],
+			"translation": [0, -3, -2.5],
+			"scale": [0.8, 0.8, 0.8]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [70, 0, 0],
+			"translation": [0, -3, -2.5],
+			"scale": [0.8, 0.8, 0.8]
+		},
+		"firstperson_righthand": {
+			"rotation": [10, 0, 0]
+		},
+		"firstperson_lefthand": {
+			"rotation": [11, 0, 0]
+		},
+		"ground": {
+			"translation": [0, 3, 0],
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"gui": {
+			"rotation": [25, 45, 0],
+			"translation": [0, 2, 0]
+		},
+		"head": {
+			"translation": [0, 14.25, 0]
+		},
+		"fixed": {
+			"translation": [0, 6.5, -5.25],
+			"scale": [2, 2, 2]
+		}
+	}
+}
