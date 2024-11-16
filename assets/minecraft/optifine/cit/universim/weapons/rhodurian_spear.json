@@ -219,9 +219,8 @@
 			"scale": [0.7, 0.7, 0.7]
 		},
 		"fixed": {
-			"rotation": [0, 0, -45],
-			"translation": [13.25, 11, 0],
-			"scale": [2, 2, 2]
+			"translation": [1.25, 23.25, -0.5],
+			"scale": [1.5, 2.25, 1.5]
 		}
 	},
 	"groups": [
