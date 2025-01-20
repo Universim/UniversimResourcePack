@@ -1,6 +1,11 @@
 {
     "sources": [
         {
+            "type": "directory",
+            "source": "custom",
+            "prefix": "custom/"
+        },
+        {
             "type": "single",
             "resource": "minecraft:planter/planter"
         },
