@@ -1,0 +1,15 @@
+{
+  "parent": "minecraft:item/handheld_rod",
+  "textures": {
+    "layer0": "minecraft:item/carrot_on_a_stick"
+  },
+ 
+  "overrides":[
+ 
+   {"predicate": {"custom_model_data":1}, "model":"musket/musket_0"},
+   {"predicate": {"custom_model_data":2}, "model":"musket/musket_1"},
+   {"predicate": {"custom_model_data":3}, "model":"musket/musket_2"},
+   {"predicate": {"custom_model_data":4}, "model":"musket/musket_3"},
+   {"predicate": {"custom_model_data":5}, "model":"musket/musket_loaded"}
+  ]
+}
