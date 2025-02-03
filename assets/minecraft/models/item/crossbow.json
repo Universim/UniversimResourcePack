@@ -66,6 +66,7 @@
                 "pulling": 0
             },
             "model": "item/crossbow_1"
-        }
+        },
+        {"predicate": {"custom_model_data":1}, "model":"musket/musket_loaded"}
     ]
 }

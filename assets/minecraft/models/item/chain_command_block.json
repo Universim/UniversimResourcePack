@@ -1,0 +1,10 @@
+{
+  "parent": "block/chain_command_block",
+ 
+  "overrides":[
+ 
+   {"predicate": {"custom_model_data":27}, "model":"musket/musket_ball"},
+   {"predicate": {"custom_model_data":28}, "model":"musket/musket_ball_d"},
+   {"predicate": {"custom_model_data":29}, "model":"musket/musket_ball_s"}
+  ]
+}
