@@ -1,6 +1,10 @@
 # UniversimResourcePack
 Resource pack for Universim Minecraft Server
 
+## Deploy on Universim Server
+
+To update the texture pack directly on the server, publish a new release with an asset called **UniversimResourcePack.zip **. Do not forget to create a tag with the new version on main branch.
+
 ### Credits
 Based on kalam0n's resource pack  
 https://www.planetminecraft.com/texture-pack/kalam0n-s-arms-amp-armor/
