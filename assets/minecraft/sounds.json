@@ -1,3 +1,58 @@
 {
-    "universim.wood_whistle": { "category": "master", "sounds": [ "universim/wood_whistle" ] }
+    "universim.wood_whistle": {
+        "subtitle": "Wood whistle sound",
+        "sounds": [
+            "universim/wood_whistle"
+        ]
+    },
+    "musket.shoot": {
+        "subtitle": "Musket Shoots",
+        "sounds": [
+            {
+                "name": "musket_sounds/shoot1",
+                "volume": 100,
+                "weight": 1
+            },
+            {
+                "name": "musket_sounds/shoot2",
+                "volume": 100,
+                "weight": 1
+            },
+            {
+                "name": "musket_sounds/shoot3",
+                "volume": 100,
+                "weight": 1
+            }
+        ]
+    },
+    "crossbow.shoot": {
+        "subtitle": "Crossbow Shoots",
+        "sounds": [
+            {
+                "name": "musket_sounds/shoot_1",
+                "volume": 100,
+                "weight": 1
+            },
+            {
+                "name": "musket_sounds/shoot_2",
+                "volume": 100,
+                "weight": 1
+            },
+            {
+                "name": "musket_sounds/shoot_3",
+                "volume": 100,
+                "weight": 1
+            }
+        ]
+    },
+    "musket.reload": {
+        "subtitle": "Musket Reloads",
+        "sounds": [
+            {
+                "name": "musket_sounds/reload",
+                "volume": 100,
+                "weight": 1
+            }
+        ]
+    }
 }
