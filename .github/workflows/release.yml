@@ -23,7 +23,7 @@ jobs:
 
       - name: Get version
         run: |
-          PACK_VERSION = grep -Eo '[0-9]\.[0-9]\.[0-9]+' <<< jq -r ".pack.description"
+          echo `PACK_VERSION=$(grep -Eo '[0-9]\.[0-9]\.[0-9]+' <<< jq -r ".pack.description")`
 
       - name: Create ZIP file
         run: |
