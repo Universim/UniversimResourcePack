@@ -1,7 +1,7 @@
 name: Resourcepack Zipper
 
 on:
-  push: #
+  push:
     branches:
       - ci/zip-and-release # Adjust this branch name if needed
 
