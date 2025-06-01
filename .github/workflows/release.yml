@@ -5,6 +5,9 @@ on:
     branches:
       - ci/zip-and-release # Adjust this branch name if needed
 
+permissions:
+  packages: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
