@@ -23,11 +23,11 @@ jobs:
         uses: ComunidadAylas/PackSquash-action@v4
         with:
           packsquash_version: latest # Uses the latest PackSquash release supported by the action
-          shader_source_transformation_strategy: keep_as_is
 
       - name: Get version
+        id: version-selector
         run: |
-          echo "PACK_VERSION=$(jq -r '.pack.description' pack.mcmeta | grep -Eo '[0-9]\.[0-9]\.[0-9]+')" >> $env:PACK_VERSION
+          echo "PACK_VERSION=$(jq -r '.pack.description' pack.mcmeta | grep -Eo '[0-9]\.[0-9]\.[0-9]+')" >> "$GITHUB_OUTPUT"
 
       - name: Create ZIP file
         run: |
@@ -47,9 +47,10 @@ jobs:
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PACK_VERSION: ${{ steps.version-selector.outputs.SELECTED_COLOR }}
         with:
-          tag_name: v${{ env.PACK_VERSION }}-test
-          release_name: v${{ env.PACK_VERSION }}-test
+          tag_name: v${{ $PACK_VERSION }}-test
+          release_name: v${{ $PACK_VERSION }}-test
           draft: false
           prerelease: false
 
