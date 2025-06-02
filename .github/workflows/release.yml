@@ -27,7 +27,7 @@ jobs:
       - name: Get version
         id: version-selector
         run: |
-          echo "PACK_VERSION=$(jq -r '.pack.description' pack.mcmeta | grep -Eo '[0-9]\.[0-9]\.[0-9]+')" >> "$GITHUB_OUTPUT"
+          echo "PACK_VERSION=$(jq -r '.pack.description' pack.mcmeta | grep -Eo '[0-9]\.[0-9]\.[0-9]+')" >> "$GITHUB_ENV"
 
       - name: Create ZIP file
         run: |
@@ -47,10 +47,9 @@ jobs:
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PACK_VERSION: ${{ steps.version-selector.outputs.PACK_VERSION }}
         with:
-          tag_name: v${{ $PACK_VERSION }}-test
-          release_name: v${{ $PACK_VERSION }}-test
+          tag_name: v${{ env.PACK_VERSION }}-test
+          release_name: v${{ env.PACK_VERSION }}-test
           draft: false
           prerelease: false
 
