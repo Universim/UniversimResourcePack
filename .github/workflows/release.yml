@@ -35,6 +35,7 @@ jobs:
           ZIP_NAME="UniversimRessourcePack.zip"
           echo "ZIP_NAME=${ZIP_NAME}" >> $GITHUB_ENV
           zip -r "${ZIP_NAME}" . -x .\*
+          sha1sum ${ZIP_NAME}
 
       - name: Upload ZIP artifact
         uses: actions/upload-artifact@v4
