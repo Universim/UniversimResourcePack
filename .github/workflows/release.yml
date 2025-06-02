@@ -3,7 +3,7 @@ name: Resourcepack Zipper
 on:
   push:
     branches:
-      - ci/zip-and-release # Adjust this branch name if needed
+      - main
 
 permissions:
   packages: write
@@ -51,8 +51,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: v${{ env.PACK_VERSION }}-test
-          release_name: v${{ env.PACK_VERSION }}-test
+          tag_name: v${{ env.PACK_VERSION }}
+          release_name: v${{ env.PACK_VERSION }}
           draft: false
           prerelease: false
 
