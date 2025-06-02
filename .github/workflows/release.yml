@@ -47,7 +47,7 @@ jobs:
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PACK_VERSION: ${{ steps.version-selector.outputs.SELECTED_COLOR }}
+          PACK_VERSION: ${{ steps.version-selector.outputs.PACK_VERSION }}
         with:
           tag_name: v${{ $PACK_VERSION }}-test
           release_name: v${{ $PACK_VERSION }}-test
