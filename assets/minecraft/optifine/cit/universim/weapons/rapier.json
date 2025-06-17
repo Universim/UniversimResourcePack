@@ -3,7 +3,7 @@
 	"texture_size": [32, 32],
 	"textures": {
 		"10": "./rapier",
-		"particle": "wool_colored_brown"
+		"particle": "./wool_colored_brown"
 	},
 	"elements": [
 		{
