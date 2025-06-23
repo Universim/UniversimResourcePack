@@ -1,9 +1,13 @@
 name: Resourcepack Zipper
 
 on:
-  push: #
+  push:
     branches:
-      - ci/zip-and-release # Adjust this branch name if needed
+      - main
+
+permissions:
+  packages: write
+  contents: write
 
 jobs:
   build:
@@ -11,7 +15,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0 # A non-shallow repository clone is required
 
@@ -19,21 +23,24 @@ jobs:
         uses: ComunidadAylas/PackSquash-action@v4
         with:
           packsquash_version: latest # Uses the latest PackSquash release supported by the action
-          shader_source_transformation_strategy: keep_as_is
 
       - name: Get version
+        id: version-selector
         run: |
-          PACK_VERSION = grep -Eo '[0-9]\.[0-9]\.[0-9]+' <<< jq -r ".pack.description"
+          echo "PACK_VERSION=$(jq -r '.pack.description' pack.mcmeta | grep -Eo '[0-9]\.[0-9]\.[0-9]+')" >> "$GITHUB_ENV"
 
       - name: Create ZIP file
         run: |
           COMMIT_ID=$(git rev-parse --short HEAD)
           ZIP_NAME="UniversimRessourcePack.zip"
           echo "ZIP_NAME=${ZIP_NAME}" >> $GITHUB_ENV
-          zip -r "${ZIP_NAME}" .
+          zip -r "${ZIP_NAME}" . -x .\*
+
+      - name: Compute sha1sum
+        run: sha1sum ${{ github.workspace }}/${{ env.ZIP_NAME }}
 
       - name: Upload ZIP artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: resource-pack-artifact
           path: ${{ env.ZIP_NAME }}
@@ -42,10 +49,10 @@ jobs:
         id: create_release
         uses: actions/create-release@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.RESOURCE_ZIPPER }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: v${{ env.PACK_VERSION }}-test
-          release_name: v${{ env.PACK_VERSION }}-test
+          tag_name: v${{ env.PACK_VERSION }}
+          release_name: v${{ env.PACK_VERSION }}
           draft: false
           prerelease: false
 
@@ -53,7 +60,7 @@ jobs:
         id: upload-release-asset
         uses: actions/upload-release-asset@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.RESOURCE_ZIPPER }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ${{ github.workspace }}/${{ env.ZIP_NAME }}
